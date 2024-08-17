@@ -2,6 +2,8 @@ package ListNode;
 
 // 环形链表问题
 public class Cycle {
+    // 141. 环形链表
+    // 快慢指针, fast 最终能正常走到链表末尾, 说明没有环, 若快慢指针相遇, 则有环
     public boolean hasCycle(ListNode head){
         ListNode slow = head, fast = head;
         while (fast != null && fast.next != null){
@@ -13,6 +15,7 @@ public class Cycle {
         return false;
     }
 
+    // 142. 环形链表 II
     public ListNode detectCycle(ListNode head){
         ListNode slow = head, fast = head;
         while (fast != null && fast.next != null){
@@ -33,12 +36,3 @@ public class Cycle {
     }
 }
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-        next = null;
-    }
-}
