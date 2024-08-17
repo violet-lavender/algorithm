@@ -1,9 +1,8 @@
-package ListNode;
+package ListNode.Other;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 
-// 146. LRU缓存
+// LRU缓存
 // 哈希表 + 双向链表, 队尾为最近访问的节点, 队头为最久未访问的节点
 public class LRUCache {
     int capacity;

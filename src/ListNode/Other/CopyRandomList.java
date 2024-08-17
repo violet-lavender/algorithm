@@ -1,8 +1,11 @@
-package ListNode;
+package ListNode.Other;
 
 import java.util.HashMap;
 
-public class Other {
+// 随机链表的复制
+// 一次哈希 + 两次遍历, 哈希是原节点到克隆节点的映射, 第一次遍历克隆节点, 第二次遍历组装节点
+public class CopyRandomList {
+
     static class Node {
         int val;
         Node next;
@@ -15,8 +18,6 @@ public class Other {
         }
     }
 
-    // 138. 随机链表的复制
-    // 一次哈希 + 两次遍历, 哈希是原节点到克隆节点的映射, 第一次遍历克隆节点, 第二次遍历组装节点
     public Node copyRandomList(Node head) {
         HashMap<Node, Node> map = new HashMap<>();
         for (Node p = head; p != null; p = p.next) {
@@ -33,5 +34,4 @@ public class Other {
         return map.get(head);
     }
 }
-
 

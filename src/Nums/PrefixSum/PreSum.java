@@ -16,21 +16,8 @@ public class PreSum {
         return preSum[right + 1] - preSum[left];
     }
 
-    public static void main(String args[]){
-        System.out.print("input:");
-        Scanner in = new Scanner(System.in);
-        String s = in.nextLine();
-        System.out.println("L1:     a = 2");
-        System.out.println("L3:     b = 1");
-        System.out.println("L4:L5:  c = a + b");
-        System.out.println("        goto L2");
-        System.out.println("L6:     c = a - b");
-        System.out.println("L2:");
-
-
-    }
 }
 
 // 前缀和 + 哈希表:
 // 在前缀和数组中, preSum[i] - preSum[j], 即表示i,j之间的子数组之和
-//// 但是常规的前缀和求解要两层循环, 可以用哈希表记录每个前缀和对应的索引, 可以线性求解
+// 但是常规的前缀和求解要两层循环, 可以用哈希表记录每个前缀和对应的索引, 可以线性求解
