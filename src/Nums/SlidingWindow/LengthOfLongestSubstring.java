@@ -3,7 +3,7 @@ package Nums.SlidingWindow;
 import java.util.HashMap;
 
 // 无重复字符的最长子串
-public class LengthOfLongestSubstring {
+public class  LengthOfLongestSubstring {
     // 滑动窗口经典解法, 窗口存储字符及其出现次数
     public int lengthOfLongestSubstring(String s) {
         HashMap<Character, Integer> window = new HashMap<>();

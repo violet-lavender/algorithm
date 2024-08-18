@@ -1,4 +1,4 @@
-package Sort;
+package Sort.Basic;
 
 public class SelectionSort {
     public static void selectSort(int[] arr){

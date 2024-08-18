@@ -1,4 +1,4 @@
-package Sort;
+package Sort.Basic;
 
 public class InsertionSort {
     public static void insertionSort(int[] arr){
