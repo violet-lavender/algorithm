@@ -1,7 +1,5 @@
 package Nums.PrefixSum;
 
-import java.util.Scanner;
-
 // 前缀和preSum = new int[nums.length + 1], preSum[i + 1]为nums的前i项之和(0~n共n+1个)
 // 一般我们让preSum比nums数组多一位, 因为第一位要放0
 public class PreSum {
