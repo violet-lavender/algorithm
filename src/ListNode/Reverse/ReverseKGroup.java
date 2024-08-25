@@ -12,13 +12,13 @@ public class ReverseKGroup {
         ListNode left, right;
         left = right = head;
         for (int i = 0; i < k; i++) {
-            // base case, 不足k个, 不需要反转
+            // base case, 不足 k 个, 不需要反转
             if (right == null) {
                 return head;
             }
             right = right.next;
         }
-        // 反转前k个元组
+        // 反转前 k 个元组
         ListNode newHead = reverse(left, right);
         // 递归反转后续链表并连接起来, 注意这里的连接逻辑
         left.next = reverseKGroup(right, k);

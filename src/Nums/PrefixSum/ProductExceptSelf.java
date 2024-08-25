@@ -3,7 +3,7 @@ package Nums.PrefixSum;
 // 除自身以外数组的乘积
 public class ProductExceptSelf {
 
-    // 典型前缀积, 注意这里定义时前缀积包括自身, 即prefix[0] = nums[0], prefix[i] 乘到了 i 而不是 i-1, 同时注意越界问题
+    // 典型前缀积, 注意这里定义时前缀积包括自身, 即 prefix[0] = nums[0], prefix[i] 乘到了 i 而不是 i-1, 同时注意越界问题
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int[] prefix = new int[n];
@@ -55,7 +55,7 @@ public class ProductExceptSelf {
         int suffix = 1;
         for (int i = n - 1; i >= 0; i--) {
             res[i] *= suffix;
-            // 注意这里suffix是后置更新, 所以是 nums[i] 而不是 nums[i+1]
+            // 注意这里 suffix 是后置更新, 所以是 nums[i] 而不是 nums[i+1]
             suffix *= nums[i];
         }
         return res;

@@ -7,7 +7,7 @@ public class RemoveElement {
         int slow = 0, fast = 0;
         while(fast < nums.length){
             if(nums[fast] != val){
-                // fast遇到val就跳过,否则就赋值为slow —— 直接覆盖赋值即可, 不用交换
+                // fast 遇到 val 就跳过,否则就赋值为 slow —— 直接覆盖赋值即可, 不用交换
                 nums[slow++] = nums[fast];
             }
             fast++;

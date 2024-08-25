@@ -19,17 +19,17 @@ public class SortList {
             cur = cur.next;
         }
         ListNode nP = new ListNode(0, head);
-        // 外层循环, 从长度为1的子链表开始, 不断倍增
+        // 外层循环, 从长度为 1 的子链表开始, 不断倍增
         for (int size = 1; size < len; size = size * 2) {
             ListNode tail = nP;
             ListNode left = nP.next;
             // 内层循环：遍历链表并合并相邻的子链表
             while (left != null) {
-                // 将链表从left处切割成两部分，前一部分为size长度
+                // 将链表从 left 处切割成两部分，前一部分为size长度
                 ListNode right = split(left, size);
                 // 切割后一部分，返回其后的部分
                 ListNode nxt = split(right, size);
-                // 合并left和right，tail为合并后链表的最后一个节点
+                // 合并 left 和 right, tail为合并后链表的最后一个节点
                 tail = merge(left, right, tail);
                 left = nxt;
             }
@@ -37,7 +37,7 @@ public class SortList {
         return nP.next;
     }
 
-    // 切割链表，返回切割后链表的头结点
+    // 切割链表, 返回切割后链表的头结点
     private ListNode split(ListNode head, int size) {
         if (head == null){
             return null;
@@ -51,7 +51,7 @@ public class SortList {
         return nxt;
     }
 
-    // 合并两个有序链表，并将结果链接到tail后面
+    // 合并两个有序链表, 并将结果链接到 tail 后面
     private ListNode merge(ListNode left, ListNode right, ListNode tail) {
         ListNode cur = tail;
         while (left != null && right != null) {

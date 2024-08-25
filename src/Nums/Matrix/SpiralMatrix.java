@@ -11,9 +11,9 @@ public class SpiralMatrix {
         int m = matrix.length, n = matrix[0].length;
         // 边界
         int top = 0, bottom = m - 1, left = 0, right = n - 1;
-        // 用size控制循环比较合适, 不用边界控制循环
+        // 用 size 控制循环比较合适, 不用边界控制循环
         while (res.size() < m * n) {
-            // 右、下、左、上 顺序遍历, 外层if控制边界
+            // 右、下、左、上 顺序遍历, 外层 if 控制边界
             if (top <= bottom) {
                 for (int j = left; j <= right; j++) {
                     res.add(matrix[top][j]);

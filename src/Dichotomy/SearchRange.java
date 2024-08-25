@@ -44,8 +44,8 @@ public class SearchRange {
                 left = mid + 1;
             }
         }
-        // 收缩左边界时left + 1(相当于多加了一次),最后返回left - 1
-        // while的结束条件是right == left - 1, 可以用right替换left - 1, 即左边界left, 右边界right, 更统一
+        // 收缩左边界时 left + 1 (相当于多加了一次),最后返回 left - 1
+        // while 的结束条件是 right == left - 1, 可以用 right 替换 left - 1, 即左边界 left, 右边界 right, 更统一
         if(right < 0)
             return -1;
         return nums[right] == target? right : -1;

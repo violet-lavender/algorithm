@@ -8,7 +8,7 @@ import java.util.List;
 // 合并区间
 public class Merge {
 
-    // 返回int[][]一般可以构造list<int[][]>, 最后返回res.toArray(new int[res.size()][])
+    // 返回 int[][] 一般可以构造 list<int[][]>, 最后返回 res.toArray(new int[res.size()][])
     public int[][] merge(int[][] intervals) {
         if (intervals == null || intervals.length == 0) {
             return new int[][]{};

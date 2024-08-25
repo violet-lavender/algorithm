@@ -14,7 +14,7 @@ public class GroupAnagrams {
             else {
                 // 当新的键值对被添加时, 需要创建一个包含当前字符串的新列表, 而不是空列表
                 // List.of() 返回的列表是不可变的, 不能向其添加元素
-                // 因此 map.put(s, List.of(str));会报错
+                // 因此 map.put(s, List.of(str)); 会报错
                 List<String> newList = new ArrayList<>();
                 newList.add(str);
                 map.put(s, newList);
@@ -23,14 +23,14 @@ public class GroupAnagrams {
         return new ArrayList<>(map.values());
     }
 
-    // 字符排序后作key
+    // 字符排序后作 key
     public String strSort(String s) {
         char[] chs = s.toCharArray();
         Arrays.sort(chs);
         return new String(chs);
     }
 
-    // 字符与其出现次数作key,少了排序,时间复杂度更低
+    // 字符与其出现次数作 key, 少了排序,时间复杂度更低
     public String strCount(String s) {
         int[] counts = new int[26];
         for (int i = 0; i < s.length(); i++)

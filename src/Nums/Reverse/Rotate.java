@@ -9,7 +9,7 @@ public class Rotate {
     public void rotate0(int[] nums, int k) {
         int n = nums.length;
         k %= nums.length;
-        // 需要遍历次数为k和n的最大公约数
+        // 需要遍历次数为 k 和 n 的最大公约数, 用来代替 n, 降低复杂度
         int count = gcd(k, n);
         for (int start = 0; start < count; start++) {
             int cur = start;
@@ -20,12 +20,12 @@ public class Rotate {
                 nums[nxt] = prev;
                 prev = tmp;
                 cur = nxt;
-            } while (start!= cur);
+            } while (start != cur);
         }
     }
 
     private int gcd(int a, int b) {
-        return b == 0? a : gcd(b, a % b);
+        return b == 0 ? a : gcd(b, a % b);
     }
 
     // 数组反转, 巧妙的数学技巧

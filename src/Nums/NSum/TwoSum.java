@@ -49,9 +49,9 @@ public class TwoSum {
             int sum = numbers[l] + numbers[r];
             if(sum == target){
                 return new int[]{l + 1, r + 1};
-            }else if(sum < target){     //sum过小则增大
+            }else if(sum < target){     // sum 过小则增大
                 l++;
-            }else{      //sum过大则调小
+            }else{      // sum 过大则调小
                 r--;
             }
         }

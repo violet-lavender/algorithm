@@ -1,6 +1,7 @@
 package Sort.Basic;
 
 public class SelectionSort {
+
     public void selectSort(int[] arr){
         if(arr == null || arr.length <= 1)
             return;

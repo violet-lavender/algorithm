@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // 最小覆盖子串
-// 滑动窗口, 一般都是左开右闭区间[left, right)比较好处理; 在窗口增大时判断是否满足, 满足时收缩窗口至不满足, 在收缩窗口时更新结果
+// 滑动窗口, 一般都是左开右闭区间 [left, right) 比较好处理; 在窗口增大时判断是否满足, 满足时收缩窗口至不满足, 在收缩窗口时更新结果
 public class MinWindow {
 
     public String minWindow(String s, String t) {

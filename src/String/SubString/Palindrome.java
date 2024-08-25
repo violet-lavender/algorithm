@@ -20,8 +20,8 @@ public class Palindrome {
     // 最长回文子串
     public String longestPalindrome(String s) {
         String res = "";
-        // 这里 i < s.length , 不能由于 i+1 而担心 i = length - 1 时, i + 1 = length 越界, 在palindrome中明确处理了越界问题
-        // 而i < s.length - 1, 看似不用处理i=s.length——不可能最后一个字母成为回文串的中心,
+        // 这里 i < s.length , 不能由于 i + 1 而担心 i = length - 1 时, i + 1 = length 越界, 在 palindrome 中明确处理了越界问题
+        // 而 i < s.length - 1, 看似不用处理 i = s.length——不可能最后一个字母成为回文串的中心,
         // 但当 length == 0, 第一个字母即为最后一个字母, 循环无法进行—— i = 0 < 0, 返回空, 无法正确处理
         for(int i = 0; i < s.length() ; i++){
             String s1 = palindrome(s,i,i);
@@ -42,7 +42,7 @@ public class Palindrome {
             l--;
             r++;
         }
-        // 返回以s[l]和s[r]为中心的最长回文串. 若i=l, 则奇数长, 否则为偶数长, 巧妙求解
-        return s.substring(l + 1, r);   // 注意substring是左闭右开[begin,end)
+        // 返回以 s[l] 和 s[r] 为中心的最长回文串. 若 i = l, 则奇数长, 否则为偶数长, 巧妙求解
+        return s.substring(l + 1, r);   // 注意 substring 是左闭右开 [begin,end)
     }
 }

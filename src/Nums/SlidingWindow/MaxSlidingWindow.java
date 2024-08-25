@@ -12,7 +12,7 @@ public class MaxSlidingWindow {
         List<Integer> res = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             if (i < k - 1) {
-                // 先“填满”k - 1
+                // 先“填满” k - 1
                 window.push(nums[i]);
             } else {
                 window.push(nums[i]);

@@ -24,7 +24,7 @@ public class RemoveCoveredIntervals {
             if (left <= interval[0] && right >= interval[1]) {   // 完全覆盖
                 res++;
             } else if (right >= interval[0] && right <= interval[1]) {   // 部分覆盖
-                // 由于排序, 可以只更新right, 当然这里更新left与完全不相交逻辑重合也可以
+                // 由于排序, 可以只更新 right, 当然这里更新 left 与完全不相交逻辑重合也可以
                 right = interval[1];
             } else if (right < interval[0]) {    // 完全不相交
                 left = interval[0];

@@ -1,6 +1,6 @@
 package Nums.Remove;
 
-// 移动零, 与RemoveElement很像, 先移除0, 再把后面赋0
+// 移动零, 与 RemoveElement 很像, 先移除 0, 再把后面赋 0
 public class MoveZeroes {
 
     public void moveZeroes(int[] nums) {
