@@ -1,8 +1,9 @@
-package ListNode.TwoPointer;
+package ListNode.Other;
 
 import ListNode.ListNode;
 
 // 相交链表
+// HashSet 也很简单, 这里给出巧妙的双指针
 public class GetIntersectionNode {
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {

@@ -3,7 +3,8 @@ package Nums.NSum;
 import java.util.*;
 
 public class ThreeSum {
-    // 三数之和, 固定fist, 从从小到大枚举second, 从大到小枚举third
+
+    // 三数之和, 固定 fist, 从从小到大枚举 second, 从大到小枚举 third
     public List<List<Integer>> threeSum(int[] nums, int target) {
         int n = nums.length;
         Arrays.sort(nums);

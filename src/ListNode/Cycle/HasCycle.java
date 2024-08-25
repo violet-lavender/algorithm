@@ -3,6 +3,7 @@ package ListNode.Cycle;
 import ListNode.ListNode;
 
 // 环形链表
+// HashSet 也很简单, 这里给出快慢指针
 // 快慢指针, fast 最终能正常走到链表末尾, 说明没有环, 若快慢指针相遇, 则有环
 public class HasCycle {
 

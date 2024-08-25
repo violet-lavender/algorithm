@@ -1,10 +1,11 @@
-package ListNode.TwoPointer;
+package ListNode.Remove;
 
 import ListNode.ListNode;
 
 // 删除排序链表中的重复元素
 public class DeleteDuplicates {
 
+    // [1,2,3,3,4,4,5] -> [1,2,3,4,5]
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -24,6 +25,7 @@ public class DeleteDuplicates {
         return nP.next;
     }
 
+    // [1,2,3,3,4,4,5] -> [1,2,5]
     public ListNode deleteDuplicates2(ListNode head) {
         if (head == null || head.next == null) {
             return head;

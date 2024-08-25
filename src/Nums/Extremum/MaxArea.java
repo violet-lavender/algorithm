@@ -1,9 +1,9 @@
-package Nums.TwoPointer;
+package Nums.Extremum;
 
 // 盛水最多的容器
 public class MaxArea {
     // 在每次求解中, 两个while循环只会执行其中一个, 而不是同时执行. 只有较低的一边会执行, 确保了算法的正确性
-    public int maxArea_Mine(int[] height) {
+    public int maxAreaMine(int[] height) {
         int res = 0;
         int left = 0, right = height.length - 1;
         while (left < right){

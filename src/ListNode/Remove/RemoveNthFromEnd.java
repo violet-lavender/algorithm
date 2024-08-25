@@ -1,4 +1,4 @@
-package ListNode.TwoPointer;
+package ListNode.Remove;
 
 import ListNode.ListNode;
 

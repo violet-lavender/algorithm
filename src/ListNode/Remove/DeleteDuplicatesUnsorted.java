@@ -1,4 +1,4 @@
-package ListNode.Other;
+package ListNode.Remove;
 
 import ListNode.ListNode;
 

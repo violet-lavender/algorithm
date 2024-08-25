@@ -1,11 +1,10 @@
-package Hash;
+package String.Hash;
+
+import java.util.*;
 
 // 最长连续序列. 要求时间复杂度为O(n), 空间换时间, 用哈希
 // 想找连续序列, 首先要找到这个连续序列的开头元素, 然后递增, 看之后有多少个元素还在 nums 中，即可得到最长连续序列的长度
 // 找开头元素时是分精妙且关键的操作
-
-import java.util.*;
-
 public class LongestConsecutive {
     public int longestConsecutive(int[] nums) {
         HashSet<Integer> set = new HashSet<>();

@@ -1,7 +1,7 @@
 package Sort.Basic;
 
 public class InsertionSort {
-    public static void insertionSort(int[] arr){
+    public void insertionSort(int[] arr){
         if(arr == null || arr.length <= 1)
             return;
         // 每次循环使得0~i有序, 有隐式的break操作

@@ -6,7 +6,7 @@ import Nums.PrefixSum.PreSum;
 public class Rotate {
 
     // 环状替换, 巧妙的交换与迭代
-    public void rotate1(int[] nums, int k) {
+    public void rotate0(int[] nums, int k) {
         int n = nums.length;
         k %= nums.length;
         // 需要遍历次数为k和n的最大公约数
@@ -29,7 +29,7 @@ public class Rotate {
     }
 
     // 数组反转, 巧妙的数学技巧
-    public void rotate2(int[] nums, int k) {
+    public void rotate(int[] nums, int k) {
         k %= nums.length;
         reverse(nums, 0, nums.length - 1);
         reverse(nums, 0, k - 1);

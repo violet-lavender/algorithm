@@ -1,7 +1,7 @@
 package Sort.Basic;
 
 public class SelectionSort {
-    public static void selectSort(int[] arr){
+    public void selectSort(int[] arr){
         if(arr == null || arr.length <= 1)
             return;
         for(int i = 0; i < arr.length - 1; i++){
