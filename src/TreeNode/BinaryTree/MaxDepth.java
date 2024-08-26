@@ -2,6 +2,7 @@ package TreeNode.BinaryTree;
 
 import TreeNode.TreeNode;
 
+// 二叉树的最大深度
 public class MaxDepth {
 
     // 分解思想. 整棵树的最大深度等于左右子树的最大深度加上根节点自己

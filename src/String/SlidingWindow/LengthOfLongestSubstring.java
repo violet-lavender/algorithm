@@ -1,4 +1,4 @@
-package Nums.SlidingWindow;
+package String.SlidingWindow;
 
 import java.util.HashMap;
 

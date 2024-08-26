@@ -1,12 +1,13 @@
-package Nums.SlidingWindow;
+package Stack_Queue.MonotonicQueue;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-// 滑动窗口最大值
+// 滑动窗口最大值, 可以看到在滑动窗口内的 k 个数字
 public class MaxSlidingWindow {
 
+    // 借助单调队列
     public int[] maxSlidingWindow(int[] nums, int k) {
         MonotonicQueue window = new MonotonicQueue();
         List<Integer> res = new ArrayList<>();
@@ -28,26 +29,3 @@ public class MaxSlidingWindow {
     }
 }
 
-// 单调队列
-class MonotonicQueue {
-    LinkedList<Integer> maxQueue = new LinkedList<>();
-
-    // 注意入队时, 要把比 num 小的元素推掉, 保持“单调”
-    public void push(int num) {
-        while (!maxQueue.isEmpty() && num > maxQueue.getLast()) {
-            maxQueue.pollLast();
-        }
-        maxQueue.addLast(num);
-    }
-
-    public int max() {
-        return maxQueue.getFirst();
-    }
-
-    // 注意出队时, 要判断 num == maxQueue.getFirst(), 因为想删除的元素可能已经被推出了
-    public void pop(int num) {
-        if (maxQueue.getFirst() == num) {
-            maxQueue.pollFirst();
-        }
-    }
-}

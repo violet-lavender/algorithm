@@ -1,4 +1,4 @@
-package BFS;
+package TreeNode.BFS;
 
 import TreeNode.TreeNode;
 
