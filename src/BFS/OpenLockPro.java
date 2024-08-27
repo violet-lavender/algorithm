@@ -11,7 +11,8 @@ import java.util.Set;
 /* 单向BFS: visited 的更新时机在加入队列时, 保证每个节点只被最早的一层访问到, 避免重复搜索, 确保最短路径.
 双向BFS: visited的更新时机在节点扩展时, 避免误判搜索前沿的相遇, 并确保两个方向的搜索能够动态平衡, 正确判断路径的最短性. */
 
-// 事实上, 当有新的节点入队, 当前节点才真正算是被拓展, 所以 visited.add(cur) 应该放在新节点入队之后, 而不是当前节点被拓展之前
+// 事实上, 当有新的节点入队, 当前节点才真正算是被拓展, 当前节点被遍历到并不代表被拓展,
+// 所以 visited.add(cur) 应该放在新节点入队之后, 而不是当前节点被遍历到之前
 public class OpenLockPro {
 
     public int openLock(String[] deadends, String target) {
@@ -39,7 +40,7 @@ public class OpenLockPro {
                 // 有交集, 到达终点
                 if (q2.contains(cur))
                     return step;
-                //visited.add(cur);   // 延迟更新 visited, 只有节点实际被扩展时才更新 visited
+                //visited.add(cur);   // 延迟更新 visited, 但是被遍历之前更新是错误时机
                 for (int j = 0; j < 4; j++) {
                     String up = upOne(cur, j);
                     String down = downOne(cur, j);
