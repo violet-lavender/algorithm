@@ -21,7 +21,7 @@ public class MinWindow {
             char c = s.charAt(right);
             right++;
             if (need.containsKey(c)) {
-                // 窗口增大时,先加入窗口再判断是否符合要求, 减小时则相反
+                // 窗口增大时, 先加入窗口再判断是否符合要求, 减小时则相反
                 window.put(c, window.getOrDefault(c, 0) + 1);
                 if (window.get(c).equals(need.get(c))) {
                     valid++;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-// 找到字符串中所有字母异位词
+// 找到字符串中所有字母异位词. 与 CheckInclusion 中的排列一致, 不过要求返回(所有)索引
 public class FindAnagrams {
 
     public List<Integer> findAnagrams(String s, String p) {
