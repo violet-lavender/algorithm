@@ -1,6 +1,7 @@
 package Stack_Queue.MonotonicStack;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 // 单调栈. 单调栈常用于解决涉及"最近比当前元素大/小的元素"的问题. ("下一个" —— 倒序遍历; "前一个" —— 正序遍历)
 /* 单调递增栈: 栈内元素按从栈底到栈顶递增排序, 即栈顶元素总是大于等于栈底元素,
@@ -18,10 +19,11 @@ import java.util.Stack;
 public class MonotonicStack {
 
     // 下一个更大的元素. 单调递减栈
+    // Stack 继承了 Vector, 需要同步处理, 效率不高, 一般用双端队列 DeQue 实现栈
     public int[] calculateGreaterElement(int[] nums) {
         int n = nums.length;
         int[] res = new int[n];
-        Stack<Integer> stack = new Stack<>();
+        Deque<Integer> stack = new LinkedList<>();
         // "下一个" —— 倒序遍历; "前一个" —— 正序遍历
         for (int i = n - 1; i >= 0; i--) {
             while (!stack.isEmpty() && stack.peek() <= nums[i]) {

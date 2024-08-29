@@ -1,4 +1,4 @@
-package Bitwise;
+package Trick.Bitwise;
 
 //关于异或操作 ^, 有 num ^ num = 0、num ^ 0 = num, 且 ^ 满足交换律和结合律
 public class SingleNumber {

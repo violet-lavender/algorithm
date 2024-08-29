@@ -1,7 +1,5 @@
 package Nums.Reverse;
 
-import Nums.PrefixSum.PreSum;
-
 // 轮转数组
 public class Rotate {
 

@@ -1,4 +1,4 @@
-package ListNode.Other;
+package ListNode.Hash;
 
 import java.util.HashMap;
 
