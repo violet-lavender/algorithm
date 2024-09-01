@@ -22,6 +22,7 @@ public class PathSum {
     // 以 root 为起点向下且满足路径总和为 val 的路径数目
     // 二叉树中隐式的选择与撤销. 二叉树递归模式固定, 没有复杂的回溯需求(访问路径唯一且无环), 在图论的 DFS 中很少见(需要显式选择与撤销).
     // 每次递归都进行 targetSum - val, 选择; 而递归天然就包含了撤销选择过程, 当递归返回时, 程序回到了上一个节点的状态, 撤销选择.
+    // 这里与之前两个路径之和不同, 没有 sum、target 等需要维护的状态信息, 不是传统的dfs, 甚至还有返回值.
     private int rootSum(TreeNode root, long targetSum) {
         int res = 0;
         if (root == null) {

@@ -1,4 +1,4 @@
-package UnionFind;
+package Graph.UnionFind;
 
 // 并查集 —— 动态连通性, 用树林来表示图的动态连通性, 用数组来实现这个树林
 // 连通性: 等价关系 —— 自反、对称、传递

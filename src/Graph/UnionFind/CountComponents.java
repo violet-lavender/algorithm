@@ -1,4 +1,4 @@
-package UnionFind;
+package Graph.UnionFind;
 
 // 无向图中连通分量的数目
 public class CountComponents {

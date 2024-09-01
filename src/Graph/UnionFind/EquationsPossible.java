@@ -1,4 +1,4 @@
-package UnionFind;
+package Graph.UnionFind;
 
 // 等式方程的可满足性
 // equations 装着若干字符串表示的算式, 每个算式 equations[i] 长度都是4, 而且只有 a==b 或者 a!=b 两种情况, 其中 a、b 是任意小写字母.
