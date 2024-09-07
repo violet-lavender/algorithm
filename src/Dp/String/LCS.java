@@ -16,7 +16,7 @@ public class LCS {
         return dp(text1, 0, text2, 0);
     }
 
-    // dp: 计算 s1[i..] 和 s2[..j] 的最长公共子序列长度
+    // dp: 计算 s1[i..] 和 s2[j..] 的最长公共子序列长度
     private int dp(String s1, int i, String s2, int j) {
         // base case
         if (i == s1.length() || j == s2.length()) {
