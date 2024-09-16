@@ -1,6 +1,7 @@
 package Trick.Bitwise;
 
-//关于异或操作 ^, 有 num ^ num = 0、num ^ 0 = num, 且 ^ 满足交换律和结合律
+// 关于异或操作 ^, 有 num ^ num = 0、num ^ 0 = num, 且 ^ 满足交换律和结合律
+// 异或的逆元特性, a ^ b = c ---> b ^ c = a, a ^ c = b
 public class SingleNumber {
 
     // 只有一个出现奇数次的数字, 其他数字均出现了偶数次, 异或操作可以直接找出这个数字
