@@ -19,7 +19,7 @@ public class ReverseKGroup {
             right = right.next;
         }
         // 反转前 k 个元组
-        ListNode newHead = reverse(left, right);
+        ListNode newHead = reverseN(left, k);
         // 递归反转后续链表并连接起来, 注意这里的连接逻辑
         left.next = reverseKGroup(right, k);
         return newHead;
@@ -35,6 +35,21 @@ public class ReverseKGroup {
             pre = cur;
             cur = nxt;
         }
+        return pre;
+    }
+
+    private ListNode reverseN(ListNode head, int n) {
+        if (head == null || head.next == null || n == 1) {
+            return head;
+        }
+        ListNode pre = null, cur = head, nxt;
+        for (int i = 0; i < n; i++) {
+            nxt = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = nxt;
+        }
+        head.next = cur;
         return pre;
     }
 }

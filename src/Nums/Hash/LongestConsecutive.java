@@ -1,4 +1,4 @@
-package String.Hash;
+package Nums.Hash;
 
 import java.util.*;
 
