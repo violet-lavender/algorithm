@@ -44,6 +44,7 @@ public class DFS {
         }
     }
 
+    // 如果 visited[i] == true, 说明 i 节点及之后的状态已经被判断过了(被遍历过), 无需再进行延伸, 所以visited[i]不需要回溯.
     private void traverse(List<Integer>[] graph, int s) {
         if (onPath[s])
             hasCycle = true;
