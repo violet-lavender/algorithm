@@ -2,72 +2,48 @@ package ListNode.Sort;
 
 import ListNode.ListNode;
 
-// 排序链表
-// 优先级队列, 很烂的做法, 时间复杂度O(nlogn), 空间复杂度O(n), 数组排序, 显然也是很烂的做法
-// 归并排序, 时间复杂度O(nlogn), 自顶向下空间复杂度为O(nlogn), 自底向上空间复杂度为O(1)
+import java.util.List;
+
+// 链表排序, 传统归并, 时间复杂度O(nlogn), 空间复杂度O(logn)
 public class SortList {
 
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        // 获取链表长度
-        int len = 0;
-        ListNode cur = head;
-        while (cur != null) {
-            len++;
-            cur = cur.next;
-        }
-        ListNode nP = new ListNode(0, head);
-        // 外层循环, 从长度为 1 的子链表开始, 不断倍增
-        for (int size = 1; size < len; size = size * 2) {
-            ListNode tail = nP;
-            ListNode left = nP.next;
-            // 内层循环：遍历链表并合并相邻的子链表
-            while (left != null) {
-                // 将链表从 left 处切割成两部分，前一部分为size长度
-                ListNode right = split(left, size);
-                // 切割后一部分，返回其后的部分
-                ListNode nxt = split(right, size);
-                // 合并 left 和 right, tail为合并后链表的最后一个节点
-                tail = merge(left, right, tail);
-                left = nxt;
-            }
-        }
-        return nP.next;
+        ListNode mid = getMid(head);
+        ListNode left = sortList(head);
+        ListNode right = sortList(mid);
+        return merge(left, right);
     }
 
-    // 切割链表, 返回切割后链表的头结点
-    private ListNode split(ListNode head, int size) {
-        if (head == null){
-            return null;
+    // 注意这里不但要返回链表的中点(两个时返回靠后的), 还要断开链表
+    private ListNode getMid(ListNode head) {
+        ListNode preMid = null;
+        while (head != null && head.next != null) {
+            preMid = preMid == null ? head : preMid.next;
+            head = head.next.next;
         }
-        ListNode cur = head;
-        for (int i = 1; i < size && cur.next != null; i++) {
-            cur = cur.next;
-        }
-        ListNode nxt = cur.next;
-        cur.next = null;
-        return nxt;
+        ListNode mid = preMid.next;
+        preMid.next = null;
+        return mid;
     }
 
-    // 合并两个有序链表, 并将结果链接到 tail 后面
-    private ListNode merge(ListNode left, ListNode right, ListNode tail) {
-        ListNode cur = tail;
-        while (left != null && right != null) {
-            if (left.val < right.val) {
-                cur.next = left;
-                left = left.next;
+    // 合并两个链表
+    private ListNode merge(ListNode list1, ListNode list2) {
+        ListNode dummy = new ListNode(0);
+        ListNode p = dummy;
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                p.next = list1;
+                list1 = list1.next;
             } else {
-                cur.next = right;
-                right = right.next;
+                p.next = list2;
+                list2 = list2.next;
             }
-            cur = cur.next;
+            p = p.next;
         }
-        cur.next = (left != null) ? left : right;
-        while (cur.next != null) {
-            cur = cur.next;
-        }
-        return cur;
+        p.next = list1 == null ? list2 : list1;
+        return dummy.next;
     }
 }
